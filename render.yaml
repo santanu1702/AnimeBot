@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: guesstheanime-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        value: "834450011"
+      - key: MAX_IMAGE_MB
+        value: "20"
+      - key: ENABLE_KEEPALIVE
+        value: "false"
